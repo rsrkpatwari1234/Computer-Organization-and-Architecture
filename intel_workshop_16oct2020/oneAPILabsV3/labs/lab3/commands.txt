@@ -1,0 +1,5 @@
+dpcpp -fintelfpga -DFPGA_EMULATOR hough_transform.cpp -o fpga.emu
+./fpga.emu
+dpcpp -fintelfpga -c hough_transform.cpp -o fpga.o
+dpcpp -fintelfpga -fsycl-link -Xshardware fpga.o
+source ./clean.sh
